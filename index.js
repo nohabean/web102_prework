@@ -174,7 +174,7 @@ const message = `
     We have raised $${totalRaised.toLocaleString()} across ${totalGames} games.
     ${numberOfUnfundedGames === 0 ? 'All games are funded!' :
       `Currently, ${numberOfUnfundedGames} game${numberOfUnfundedGames === 1 ? '' : 's'} ${numberOfUnfundedGames === 1 ? 'is' : 'are'} still unfunded. 
-      Help us reach our goals to fund our games!`
+      Help us reach our goals and fund our games!`
     }
 `;
 
@@ -196,7 +196,14 @@ const sortedGames =  GAMES_JSON.sort( (item1, item2) => {
 });
 
 // use destructuring and the spread operator to grab the first and second games
+const [firstGame, secondGame, ...rest] = sortedGames;
 
 // create a new element to hold the name of the top pledge game, then append it to the correct element
+let topGame = document.createElement("p");
+topGame.textContent = firstGame.name;
+firstGameContainer.appendChild(topGame);
 
 // do the same for the runner up item
+let runnerUp = document.createElement("p");
+runnerUp.textContent = secondGame.name;
+secondGameContainer.appendChild(runnerUp);
