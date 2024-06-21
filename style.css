@@ -21,6 +21,11 @@ body {
 
 .stats-container {
     display: flex;
+    align-items: center;
+}
+.stats-container:hover {
+    cursor: pointer;
+    box-shadow: 0 0 30px lightblue;
 }
 
 .stats-card {
@@ -40,6 +45,8 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    
+    
 }
 
 .game-img {
@@ -55,6 +62,18 @@ body {
     width: 300px;
     text-align: center;
     border-radius: 7px;
+    padding-bottom: 0;
+}
+
+.game-card p {
+    font-size: 15px;
+}
+
+.game-card ul {
+    list-style-type: none;
+    padding: 0;
+    font-size: 15px;
+    line-height: 2em;
 }
 
 .game-card:hover {
